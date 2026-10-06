@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTabs();
   initSchedule();
   initChecklist();
+  initGourmet();
   initWeatherEvents();
   initSakurajimaEvents();
   loadData();
@@ -57,6 +58,15 @@ function initTabs() {
       }
     });
   });
+
+  // URLハッシュによる初期タブ切り替え（例: #tab-gourmet）
+  const hash = window.location.hash.replace("#", "");
+  if (hash) {
+    const targetBtn = document.querySelector(`.tab-btn[data-tab="${hash}"]`);
+    if (targetBtn) {
+      targetBtn.click();
+    }
+  }
 }
 
 // 天気更新イベントの登録
@@ -1297,6 +1307,10 @@ function renderTimetableTables(type) {
 // ==========================================
 // 天文館グルメ フィルター＆カード生成（一人旅特化）
 // ==========================================
+function initGourmet() {
+  renderGourmetList('all');
+}
+
 function filterGourmet(filterType) {
   const buttons = document.querySelectorAll(".gourmet-filter-btn");
   buttons.forEach(btn => {
@@ -1346,35 +1360,36 @@ function renderGourmetList(filterType = 'all') {
     return;
   }
 
+  const fmt = (str) => (str ? String(str).replace(/\n/g, '<br>') : '要確認');
+
   container.innerHTML = filtered.map(item => `
     <div class="gourmet-card">
       <div>
         <div class="gourmet-card-header">
-          <div class="gourmet-shop-name">${item.name}</div>
-          <span class="solo-tag">${item.soloBadge || '★一人旅おすすめ'}</span>
-        </div>
-
-        <div style="font-size: 0.82rem; color: var(--primary-color); font-weight: bold; margin-bottom: 6px;">
-          🏷️ ジャンル: ${item.categoryLabel}
+          <h4 class="gourmet-shop-name">${item.name || '要確認'}</h4>
+          <div class="gourmet-badge-row">
+            <span class="solo-tag">${item.soloBadge || '★一人旅おすすめ'}</span>
+            <span class="gourmet-category-tag">🏷️ ${item.categoryLabel || '要確認'}</span>
+          </div>
         </div>
 
         <div class="gourmet-solo-tip">
-          👤 <strong>一人旅アドバイス:</strong> ${item.soloTip}
+          👤 <strong>一人旅アドバイス:</strong> ${fmt(item.soloTip)}
         </div>
 
         <ul class="gourmet-info-list">
-          <li><strong>🍴 おすすめ料理:</strong> ${item.recommendMenu}</li>
-          <li><strong>💰 予算の目安:</strong> ${item.budget}</li>
-          <li><strong>🕒 営業時間:</strong> ${item.hours}</li>
-          <li><strong>🎌 定休日:</strong> ${item.closed}</li>
-          <li><strong>🚶 アクセス:</strong> ${item.access}</li>
-          <li><strong>📍 住所:</strong> ${item.address}</li>
-          <li><strong>📝 予約の要否:</strong> ${item.reservation}</li>
+          <li><strong>🍴 おすすめ料理:</strong> ${fmt(item.recommendMenu)}</li>
+          <li><strong>💰 予算の目安:</strong> ${fmt(item.budget)}</li>
+          <li><strong>🕒 営業時間:</strong><br>${fmt(item.hours)}</li>
+          <li><strong>🎌 定休日:</strong> ${fmt(item.closed)}</li>
+          <li><strong>🚶 アクセス:</strong> ${fmt(item.access)}</li>
+          <li><strong>📍 住所:</strong> ${fmt(item.address)}</li>
+          <li><strong>📝 予約の要否:</strong> ${fmt(item.reservation)}</li>
         </ul>
       </div>
 
       <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-color);">
-        <a href="${item.officialUrl}" target="_blank" rel="noopener noreferrer" class="official-link-btn" style="width: 100%; font-size: 0.85rem; padding: 7px 12px;">
+        <a href="${item.officialUrl || '#'}" target="_blank" rel="noopener noreferrer" class="official-link-btn" style="width: 100%; font-size: 0.85rem; padding: 7px 12px;">
           🔗 公式サイト / 公式観光情報を見る
         </a>
       </div>
