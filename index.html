@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鹿児島旅行ナビ 2026 | 旅の最新情報ガイド</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌴</text></svg>">
+</head>
+<body>
+
+  <div class="container">
+    <!-- ヘッダー -->
+    <header>
+      <div class="header-top">
+        <div class="title-area">
+          <h1>🌴 鹿児島旅行ナビ 2026</h1>
+          <div class="subtitle">旅行期間：2026年10月22日(木) 〜 10月24日(土)</div>
+        </div>
+        <div class="countdown-badge" id="countdown-badge">
+          🎯 旅行まで計算中...
+        </div>
+      </div>
+      <div style="margin-top: 10px; font-size: 0.85rem; opacity: 0.85;" id="last-updated">
+        最終更新: 確認中...
+      </div>
+    </header>
+
+    <!-- タブ切り替えボタン -->
+    <nav class="tab-nav">
+      <button class="tab-btn active" data-tab="tab-home">🏠 ホーム</button>
+      <button class="tab-btn" data-tab="tab-schedule">🗓️ 旅行日程</button>
+      <button class="tab-btn" data-tab="tab-weather">☀️ 天気予報</button>
+      <button class="tab-btn" data-tab="tab-sakurajima">🌋 桜島・フェリー</button>
+      <button class="tab-btn" data-tab="tab-tenmonkan">🛍️ 天文館グルメ</button>
+      <button class="tab-btn" data-tab="tab-chuo">🚄 鹿児島中央駅</button>
+      <button class="tab-btn" data-tab="tab-checklist">🧳 持ち物チェック</button>
+    </nav>
+
+    <!-- タブ1: ホーム -->
+    <main id="tab-home" class="tab-content active">
+      <!-- 今日の旅行アドバイス -->
+      <section class="card" style="border-left: 6px solid var(--primary-color);">
+        <h2 class="card-title">💡 今日の旅行アドバイス</h2>
+        <div class="advice-box" style="margin-top:0;">
+          <ul class="advice-list" id="today-advice-list">
+            <!-- JSで動的生成 -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- 天気ダイジェスト -->
+      <section class="card">
+        <div class="weather-card-header">
+          <h2 class="card-title" style="margin-bottom:0; border-bottom:none; padding-bottom:0;">☀️ 鹿児島市の気象概況</h2>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div class="weather-status-tag"><span>📡 接続準備中...</span></div>
+            <button class="weather-refresh-btn" type="button">🔄 天気を更新</button>
+          </div>
+        </div>
+        <div class="weather-grid">
+          <div class="weather-box" id="weather-today-box">
+            <!-- JSで動的生成 -->
+          </div>
+          <div class="weather-box" id="weather-travel-box">
+            <!-- JSで動的生成 -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 市内交通状況 -->
+      <section class="card">
+        <h2 class="card-title">🚦 市内交通の運行状況</h2>
+        <div class="transit-list" id="transit-list">
+          <!-- JSで動的生成 -->
+        </div>
+      </section>
+    </main>
+
+    <!-- タブ: 旅行日程（スケジュール） -->
+    <div id="tab-schedule" class="tab-content">
+      <section class="card">
+        <div class="weather-card-header">
+          <h2 class="card-title" style="margin-bottom:0; border-bottom:none; padding-bottom:0;">
+            🗓️ 鹿児島 2泊3日 旅行日程スケジュール
+          </h2>
+          <span class="badge success" style="font-size:0.85rem; padding:4px 10px;">2026年10月22日〜24日</span>
+        </div>
+        <p style="margin-bottom: 14px; font-size: 0.92rem; color: #555;">
+          羽田発スカイマーク利用・ホテルタイセイ宿泊の一人旅モデルコースです。移動時間を考慮した無理のない順序で設計しています。予定ごとにチェックを入れて進捗管理できます。
+        </p>
+
+        <!-- 天気予報確認クイックバナー -->
+        <div class="schedule-weather-jump-banner">
+          <div>
+            <strong>☀️ 旅行当日の天気をチェック:</strong>
+            <span style="font-size:0.85rem; color:#475569; margin-left:6px;">最新のオンライン天気予報と連動しています</span>
+          </div>
+          <button type="button" class="weather-refresh-btn" onclick="document.querySelector('[data-tab=\'tab-weather\']').click()" style="padding:4px 12px; font-size:0.82rem;">
+            🌤️ 天気予報ページを開く
+          </button>
+        </div>
+
+        <div id="schedule-container">
+          <!-- JSで動的生成 -->
+        </div>
+      </section>
+    </div>
+
+    <!-- タブ2: 天気予報 -->
+    <div id="tab-weather" class="tab-content">
+      <section class="card">
+        <div class="weather-card-header">
+          <h2 class="card-title" style="margin-bottom:0; border-bottom:none; padding-bottom:0;">☀️ 鹿児島市 週間天気予報（リアルタイム）</h2>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div class="weather-status-tag"><span>📡 接続中...</span></div>
+            <button class="weather-refresh-btn" type="button">🔄 天気を更新</button>
+          </div>
+        </div>
+        <p style="font-size: 0.92rem; color: #555; margin-bottom: 8px;">気象庁・Open-Meteoの最新気象衛星・予測モデルから直接取得した直近7日間の天気予報です。</p>
+        <div class="weather-weekly-grid" id="weekly-weather-grid">
+          <!-- JSで自動生成 -->
+        </div>
+
+        <h3 style="font-size: 1.15rem; margin: 24px 0 12px; color: var(--primary-color);">🍂 旅行本番（10月22〜24日）の気候傾向と服装</h3>
+        <div class="weather-grid" style="margin-bottom: 16px;">
+          <div class="weather-box" style="border-left-color: #e65100;">
+            <h4 style="font-size: 1rem; margin-bottom: 6px;">平年気温の目安</h4>
+            <p><strong>最高気温:</strong> 22〜24℃（日中は快適）</p>
+            <p><strong>最低気温:</strong> 13〜15℃（朝晩は肌寒い）</p>
+            <p style="margin-top:6px; font-size:0.88rem; color:#555;">心地よい秋晴れが多く、観光に適した気候です。</p>
+          </div>
+          <div class="weather-box" style="border-left-color: #00897b;">
+            <h4 style="font-size: 1rem; margin-bottom: 6px;">おすすめの服装</h4>
+            <p><strong>日中:</strong> 長袖シャツ、薄手のカットソー</p>
+            <p><strong>朝晩・海沿い:</strong> カーディガン、秋用ジャケット、マウンテンパーカー</p>
+            <p style="margin-top:6px; font-size:0.88rem; color:#555;">桜島フェリーの甲板などは風が強いため、羽織れる上着があると快適です。</p>
+          </div>
+        </div>
+
+        <div style="background: #e8f0fe; padding: 12px 16px; border-radius: 8px; font-size: 0.88rem;">
+          ℹ️ <strong>自動更新機能について:</strong> 本アプリを開くたびに最新の天気が自動反映されます。旅行期間（10/22〜24）が近づくと、日別の詳細予報へ自動的に切り替わります。
+        </div>
+      </section>
+    </div>
+
+    <!-- タブ3: 桜島・フェリー -->
+    <div id="tab-sakurajima" class="tab-content">
+      <section class="card">
+        <div class="sakurajima-header-area">
+          <h2 class="card-title" style="margin-bottom:0; border-bottom:none; padding-bottom:0;">
+            🌋 桜島・フェリー公式情報
+          </h2>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span class="fetch-time-badge" id="sakurajima-fetch-time">最終取得: 確認中...</span>
+            <button class="weather-refresh-btn" id="sakurajima-refresh-btn" type="button">🔄 最新情報に更新</button>
+          </div>
+        </div>
+        <div id="sakurajima-content">
+          <!-- JSで動的生成 -->
+        </div>
+      </section>
+    </div>
+
+    <!-- タブ4: 天文館グルメ -->
+    <div id="tab-tenmonkan" class="tab-content">
+      <section class="card">
+        <div class="weather-card-header">
+          <h2 class="card-title" style="margin-bottom:0; border-bottom:none; padding-bottom:0;">
+            🍴 天文館グルメガイド（一人旅・2026年秋特化）
+          </h2>
+          <span class="badge success" style="font-size:0.85rem; padding:4px 10px;">★一人旅おすすめ店 多数掲載</span>
+        </div>
+        <p style="margin-bottom: 14px; font-size: 0.92rem; color: #555;">
+          鹿児島県・鹿児島市公式観光情報に基づく、天文館の一人旅で利用しやすい名店厳選ガイドです。カウンター席の有無、予算、予約の要否、電停からのアクセスをご確認いただけます。
+        </p>
+
+        <!-- ジャンル絞り込みフィルターボタン -->
+        <div class="gourmet-filter-bar">
+          <button type="button" class="gourmet-filter-btn active" data-filter="all" onclick="filterGourmet('all')">
+            🍽️ すべて表示
+          </button>
+          <button type="button" class="gourmet-filter-btn" data-filter="solo" onclick="filterGourmet('solo')">
+            ★ 今夜のおすすめ（一人旅向け）
+          </button>
+          <button type="button" class="gourmet-filter-btn" data-filter="kurobuta" onclick="filterGourmet('kurobuta')">
+            🐷 黒豚（とんかつ・しゃぶ）
+          </button>
+          <button type="button" class="gourmet-filter-btn" data-filter="local" onclick="filterGourmet('local')">
+            🍶 郷土料理
+          </button>
+          <button type="button" class="gourmet-filter-btn" data-filter="ramen" onclick="filterGourmet('ramen')">
+            🍜 ラーメン
+          </button>
+          <button type="button" class="gourmet-filter-btn" data-filter="sweets" onclick="filterGourmet('sweets')">
+            🍧 白熊・スイーツ
+          </button>
+          <button type="button" class="gourmet-filter-btn" data-filter="satsumaage" onclick="filterGourmet('satsumaage')">
+            🐟 さつま揚げ
+          </button>
+        </div>
+
+        <!-- 該当件数表示 -->
+        <div id="gourmet-count-display" style="font-size: 0.85rem; color: #666; margin: 10px 0 16px;">
+          <!-- JSで自動更新 -->
+        </div>
+
+        <!-- 店舗カード一覧コンテナ -->
+        <div class="gourmet-card-grid" id="gourmet-cards-container">
+          <!-- JSで動的生成 -->
+        </div>
+
+        <!-- 注意書き -->
+        <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 6px; padding: 12px; margin-top: 20px; font-size: 0.82rem; color: #666;">
+          ℹ️ <strong>営業時間・定休日について:</strong> 公式サイトおよび鹿児島市観光情報に基づく情報です。大型連休や仕入れ状況により変更される場合があるため、夜のコースや訪問直前は各店舗の公式サイトやお電話等での確認をおすすめします。
+        </div>
+
+        <!-- 公式観光リンク集 -->
+        <div class="official-link-section" style="margin-top: 18px;">
+          <div class="official-link-title">🔗 信頼できる鹿児島公式グルメ情報リンク</div>
+          <div class="official-btn-grid">
+            <a href="https://www.kagoshima-kankou.com/guide/10527" target="_blank" rel="noopener noreferrer" class="official-link-btn">
+              🏛️ 鹿児島県観光連盟「天文館ガイド」公式
+            </a>
+            <a href="https://www.kagoshima-yokanavi.jp/gourmet" target="_blank" rel="noopener noreferrer" class="official-link-btn">
+              🌴 鹿児島市公式「よかナビ グルメ特集」
+            </a>
+            <a href="https://tenmonkan.info/" target="_blank" rel="noopener noreferrer" class="official-link-btn">
+              🛍️ 天文館商店街 公式ポータル
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="card-title">🎪 天文館 10月イベント情報</h2>
+        <ul class="info-list" id="tenmonkan-events">
+          <!-- JSで動的生成 -->
+        </ul>
+      </section>
+    </div>
+
+    <!-- タブ5: 鹿児島中央駅 -->
+    <div id="tab-chuo" class="tab-content">
+      <section class="card">
+        <h2 class="card-title">🚄 鹿児島中央駅 周辺・お土産・屋台村</h2>
+        <div id="chuo-content">
+          <!-- JSで動的生成 -->
+        </div>
+      </section>
+    </div>
+
+    <!-- タブ6: 持ち物チェックリスト -->
+    <div id="tab-checklist" class="tab-content">
+      <section class="card">
+        <h2 class="card-title">🧳 持ち物チェック（2泊3日 一人旅特化）</h2>
+        <div id="checklist-container">
+          <!-- JSで動的生成 -->
+        </div>
+      </section>
+    </div>
+
+    <!-- フッター -->
+    <footer>
+      鹿児島旅行ナビ 2026 | 旅行日程：2026年10月22日〜10月24日
+    </footer>
+  </div>
+
+  <!-- フォールバック用インラインデータ（ローカルHTML直接起動用） -->
+  <script>
+    window.FALLBACK_DATA = {
+      updatedAt: "2026-10-06T13:00:00+09:00",
+      todayWeather: {
+        date: "2026年10月6日(火)",
+        condition: "晴れ",
+        tempMax: 28,
+        tempMin: 17,
+        rainProb: "10%",
+        clothing: "日中は半袖〜長袖1枚で快適。朝晩は17℃まで冷え込むためカーディガンや薄手ジャケットが必須です。",
+        umbrella: "不要"
+      },
+      travelPeriodWeather: {
+        status: "気象庁の週間予報発表待ち（直前1週間前より日別詳細予報を表示）",
+        typicalClimate: {
+          tempMax: "22〜24℃",
+          tempMin: "13〜15℃",
+          trend: "例年10月下旬は心地よい秋晴れの日が多い傾向です。",
+          advice: "朝晩の冷え込み対策として、脱ぎ着しやすい薄手のコートやパーカー、ストール等の準備をおすすめします。"
+        }
+      },
+      transitStatus: [
+        { name: "鹿児島市電", status: "平常運行", badge: "success", note: "市内中心部（中央駅〜天文館〜水族館口）の移動に便利" },
+        { name: "カゴシマシティビュー", status: "平常運行", badge: "success", note: "城山・仙巌園・天文館などを約80分で巡る観光周遊バス" },
+        { name: "桜島フェリー", status: "公式SNSで確認推奨", badge: "info", note: "最新の運航・見合わせ状況は公式X（@sakurajimaf2525）にてリアルタイム発信中" },
+        { name: "鹿児島空港連絡バス", status: "平常運行", badge: "success", note: "予約不要（先着順）。復路は飛行機出発2時間前を目安に利用推奨" }
+      ],
+      sakurajima: {
+        alertLevel: "レベル3（入山規制）",
+        recentActivity: "10月5日に南岳山頂火口で噴火（噴煙高度1,300m）を観測。火口から約2km以内は立ち入り規制中。",
+        touristImpact: "湯之平展望所、有村溶岩展望所など海岸沿いの主要観光スポットは規制外のため通常通り観光可能です。",
+        windDirection: "秋〜冬は西風・北西風が増加し、大隅半島方面へ灰が流れやすい傾向ですが、当日の風向き確認が大切です。",
+        tips: "降灰時はコンタクトレンズではなくメガネの着用を推奨。目薬やマスクがあると安心です。",
+        ferryInfo: "桜島港〜鹿児島港間は24時間運航中。名物「やぶ金」のうどんも船内で楽しめます。",
+        busInfo: "「サクラジマアイランドビュー」（周遊バス）は9:30〜16:30に30分間隔で通常運行中（1周約60分）。"
+      },
+      chuoStation: {
+        overview: "新幹線・在来線・市電・バスターミナルが結集する鹿児島の陸の玄関口です。",
+        shopping: [
+          { name: "みやげ横丁（駅構内2F改札前）", desc: "かるかん、さつま揚げ、焼酎など鹿児島銘菓・特産品が勢揃い。新幹線乗車前の購入に便利です。" },
+          { name: "アミュプラザ鹿児島", desc: "観覧車「アミュラン」が目印の駅直結複合商業施設。ファッションや雑貨、レストランが充実。" }
+        ],
+        gourmet: [
+          { name: "ぐるめ横丁（駅構内2F）", desc: "黒豚とんかつ、鹿児島ラーメン、郷土料理など到着直後や出発前に立ち寄りやすいグルメエリア。" },
+          { name: "かごっまふるさと屋台村", desc: "駅直結『Li-Ka1920』1階および鹿児島中央ターミナル地下1階『バスチカ』で営業中。地元食材と本格焼酎を楽しめます。" }
+        ],
+        events: "駅前AMU広場は通常営業中（10月31日にかごしま乗り物×MaaSフェスタ開催予定）。"
+      },
+      tenmonkan: {
+        overview: "南九州最大の繁華街。アーケード街が広がり、雨や火山灰の日でも快適に散策できます。",
+        recommendedSpots: [
+          { category: "白熊（スイーツ）", name: "天文館むじゃき 本店", highlight: "名物「白熊」の発祥店。一人旅に嬉しい小ぶりな『ベビーサイズ』あり！", soloFriendly: true },
+          { category: "黒豚とんかつ", name: "黒かつ亭 天文館店", highlight: "肉厚で旨味あふれる熟成黒豚。カウンター席完備で一人でも気軽に入れます。", soloFriendly: true },
+          { category: "黒豚しゃぶしゃぶ", name: "いちにいさん 天文館店", highlight: "そばつゆで味わう絶品しゃぶしゃぶ。ランチや一人鍋セットも人気。", soloFriendly: true },
+          { category: "鹿児島ラーメン", name: "鹿児島ラーメン 豚とろ 天文館本店", highlight: "とろけるようなチャーシューと濃厚豚骨スープが自慢。一人客多数。", soloFriendly: true }
+        ],
+        events: [
+          { title: "センテラス天文館 アート＆カルチャー", date: "開催中", desc: "大型商業施設センテラス天文館にて秋の文化展示やショップフェアを実施中。" },
+          { title: "KAGOSHIMA JAZZ FESTIVAL 2026（予告）", date: "10月17日(土)〜18日(日)", desc: "天文館公園などで開催される無料ジャズフェスティバル。" },
+          { title: "焼酎ストリート2026（予告）", date: "10月31日(土)〜11月1日(日)", desc: "天文館本通りに県内各地の蔵元が集まる一大焼酎イベント。" }
+        ]
+      },
+      todayAdvice: [
+        "昼夜の寒暖差（約11℃）があるため、脱ぎ着しやすい薄手の上着を必ず準備しましょう。",
+        "桜島は警戒レベル3ですが、2km圏外の主要観光スポットやフェリー・周遊バスは安全に通常営業しています。",
+        "降灰対策として、コンタクトレンズ愛用者の方はメガネと目薬を携帯しておくと快適です。",
+        "鹿児島空港連絡バスは予約不要の先着順です。帰りの便は飛行機出発2時間前を目安にゆとりを持って行動しましょう。"
+      ]
+    };
+  </script>
+  <script src="sakurajima.js"></script>
+  <script src="ferry_timetable.js"></script>
+  <script src="gourmet.js"></script>
+  <script src="checklist.js"></script>
+  <script src="schedule.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
