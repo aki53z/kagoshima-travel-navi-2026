@@ -1,23 +1,23 @@
 {
   "status": "success",
-  "fetchedAt": "2026-10-08T11:23:38.335487+09:00",
-  "fetchedAtDisplay": "2026年10月08日 11:23",
+  "fetchedAt": "2026-10-08T18:48:57.298490+09:00",
+  "fetchedAtDisplay": "2026年10月08日 18:48",
   "volcano": {
     "alertLevel": "レベル3（入山規制）",
     "alertColor": "warning",
     "latestEruption": {
       "title": "噴火に関する火山観測報",
-      "updated": "2026-10-08T01:10:38Z",
-      "reportTime": "2026-10-08T10:10:00+09:00",
-      "text": "火　　山：桜島\n日　　時：2026年10月08日10時04分(080104UTC)\n現　　象：噴火",
-      "link": "https://www.data.jma.go.jp/developer/xml/data/20261008011039_0_VFVO52_400000.xml"
+      "updated": "2026-10-08T05:01:15Z",
+      "reportTime": "2026-10-08T14:01:00+09:00",
+      "text": "火　　山：桜島\n日　　時：2026年10月08日13時53分(080453UTC)\n現　　象：噴火",
+      "link": "https://www.data.jma.go.jp/developer/xml/data/20261008050115_0_VFVO52_400000.xml"
     },
     "ashfallForecast": {
       "title": "降灰予報（定時）",
-      "updated": "2026-10-08T02:00:00Z",
-      "reportTime": "2026-10-08T11:00:00+09:00",
-      "text": "現在、桜島は噴火警戒レベル３（入山規制）です。桜島で噴火が発生した場合には、８日２１時から２４時までは火口から西方向に降灰が予想されます。",
-      "link": "https://www.data.jma.go.jp/developer/xml/data/20261008020041_0_VFVO53_010000.xml"
+      "updated": "2026-10-08T08:00:00Z",
+      "reportTime": "2026-10-08T17:00:00+09:00",
+      "text": "現在、桜島は噴火警戒レベル３（入山規制）です。桜島で噴火が発生した場合には、８日２１時から２４時までは火口から西方向、９日０９時から１２時までは火口から北西方向に降灰が予想されます。",
+      "link": "https://www.data.jma.go.jp/developer/xml/data/20261008080041_0_VFVO53_010000.xml"
     },
     "touristImpact": "湯之平展望所、有村溶岩展望所など海岸沿いの主要観光スポットは火口2km規制外のため通常通り観光可能です。",
     "windDirection": "気象庁の降灰予報による風向き・降灰予想エリアをご確認ください。",
@@ -27,7 +27,7 @@
     "status": "最新の運航状況は公式SNSで確認してください",
     "badge": "info",
     "note": "鹿児島市船舶局公式案内：運航の再開や見合わせ、車両乗船待ちなどのリアルタイム運航状況は公式SNS（X）にて発信されています。",
-    "checkedAt": "2026年10月08日 11:23",
+    "checkedAt": "2026年10月08日 18:48",
     "officialNotice": "運航状況は公式SNSをご確認ください（鹿児島市船舶局公式）",
     "officialUrl": "https://www.city.kagoshima.lg.jp/sakurajima-ferry/",
     "officialStatusUrl": "https://www.city.kagoshima.lg.jp/sakurajima-ferry/unko_jokyo/unkojyokyo.html",
