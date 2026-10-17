@@ -1,8 +1,8 @@
 // 自動生成された桜島・フェリー最新公式データ
 window.SAKURAJIMA_DATA = {
   "status": "success",
-  "fetchedAt": "2026-10-18T02:41:43.808815+09:00",
-  "fetchedAtDisplay": "2026年10月18日 02:41",
+  "fetchedAt": "2026-10-18T04:57:27.515547+09:00",
+  "fetchedAtDisplay": "2026年10月18日 04:57",
   "volcano": {
     "alertLevel": "レベル3（入山規制）",
     "alertColor": "warning",
@@ -28,7 +28,7 @@ window.SAKURAJIMA_DATA = {
     "status": "最新の運航状況は公式SNSで確認してください",
     "badge": "info",
     "note": "鹿児島市船舶局公式案内：運航の再開や見合わせ、車両乗船待ちなどのリアルタイム運航状況は公式SNS（X）にて発信されています。",
-    "checkedAt": "2026年10月18日 02:41",
+    "checkedAt": "2026年10月18日 04:57",
     "officialNotice": "運航状況は公式SNSをご確認ください（鹿児島市船舶局公式）",
     "officialUrl": "https://www.city.kagoshima.lg.jp/sakurajima-ferry/",
     "officialStatusUrl": "https://www.city.kagoshima.lg.jp/sakurajima-ferry/unko_jokyo/unkojyokyo.html",
