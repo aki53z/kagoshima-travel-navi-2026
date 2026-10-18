@@ -1,18 +1,24 @@
 // 自動生成された桜島・フェリー最新公式データ
 window.SAKURAJIMA_DATA = {
   "status": "success",
-  "fetchedAt": "2026-10-18T16:40:20.941754+09:00",
-  "fetchedAtDisplay": "2026年10月18日 16:40",
+  "fetchedAt": "2026-10-18T21:22:51.646615+09:00",
+  "fetchedAtDisplay": "2026年10月18日 21:22",
   "volcano": {
     "alertLevel": "レベル3（入山規制）",
     "alertColor": "warning",
-    "latestEruption": null,
+    "latestEruption": {
+      "title": "噴火に関する火山観測報",
+      "updated": "2026-10-18T08:12:00Z",
+      "reportTime": "2026-10-18T17:12:00+09:00",
+      "text": "火　　山：桜島\n日　　時：2026年10月18日17時04分(180804UTC)\n現　　象：噴火",
+      "link": "https://www.data.jma.go.jp/developer/xml/data/20261018081200_0_VFVO52_400000.xml"
+    },
     "ashfallForecast": {
       "title": "降灰予報（定時）",
-      "updated": "2026-10-18T05:00:00Z",
-      "reportTime": "2026-10-18T14:00:00+09:00",
-      "text": "現在、桜島は噴火警戒レベル３（入山規制）です。桜島で噴火が発生した場合には、１８日２１時から２４時までは火口から北方向に降灰が予想されます。",
-      "link": "https://www.data.jma.go.jp/developer/xml/data/20261018050038_0_VFVO53_010000.xml"
+      "updated": "2026-10-18T11:00:00Z",
+      "reportTime": "2026-10-18T20:00:00+09:00",
+      "text": "現在、桜島は噴火警戒レベル３（入山規制）です。桜島で噴火が発生した場合には、１８日２１時から２４時までは火口から北方向、１９日０９時から１２時までは火口から北東方向に降灰が予想されます。",
+      "link": "https://www.data.jma.go.jp/developer/xml/data/20261018110037_0_VFVO53_010000.xml"
     },
     "touristImpact": "湯之平展望所、有村溶岩展望所など海岸沿いの主要観光スポットは火口2km規制外のため通常通り観光可能です。",
     "windDirection": "気象庁の降灰予報による風向き・降灰予想エリアをご確認ください。",
@@ -22,7 +28,7 @@ window.SAKURAJIMA_DATA = {
     "status": "最新の運航状況は公式SNSで確認してください",
     "badge": "info",
     "note": "鹿児島市船舶局公式案内：運航の再開や見合わせ、車両乗船待ちなどのリアルタイム運航状況は公式SNS（X）にて発信されています。",
-    "checkedAt": "2026年10月18日 16:40",
+    "checkedAt": "2026年10月18日 21:22",
     "officialNotice": "運航状況は公式SNSをご確認ください（鹿児島市船舶局公式）",
     "officialUrl": "https://www.city.kagoshima.lg.jp/sakurajima-ferry/",
     "officialStatusUrl": "https://www.city.kagoshima.lg.jp/sakurajima-ferry/unko_jokyo/unkojyokyo.html",
